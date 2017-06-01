@@ -1,0 +1,56 @@
+<div id="container">
+
+	<div id="header">
+		<h1>Texas Patriots</h1>
+	</div>
+
+	<div id="login">
+		<h3>Login:</h3>
+		<form ng-submit="UC.login(UC.loginUser)">
+			<div>
+				<label>Email:</label>
+				<input type="text" ng-model="UC.loginUser.email">
+			</div>
+			<div>
+				<label>Password:</label>
+				<input type="password" ng-model="UC.loginUser.password">
+			</div>
+			<div>
+				<input type="submit" name="Login">
+			</div>
+		</form>
+	</div>
+
+	<div id="resgister">
+		<h3>Resgister:</h3>
+		<form ng-submit="UC.create(UC.newUser)">
+			<div>
+				<label>First Name:</label>
+				<input type="text" ng-model="UC.newUser.fname">
+			</div>
+			<div>
+				<label>Last Name:</label>
+				<input type="text" ng-model="UC.newUser.lname">
+			</div>
+			<div>
+				<label>Email:</label>
+				<input type="text" ng-model="UC.newUser.email">
+			</div>
+			<div>
+				<label>Password:</label>
+				<input type="password" ng-model="UC.newUser.password">
+			</div>
+			<div>
+				<label>Password Confirmation</label>
+				<input type="password" ng-model="UC.newUser.passwordconfirmation">
+			</div>
+			<div>
+				<input type="submit" value="Register">
+			</div>
+			<ul>
+				<li ng-repeat="error in UC.registrationErrors">{{error}}</li>
+			</ul>			
+		</form>
+	</div>
+
+</div>

@@ -3,9 +3,9 @@ var fs = require('fs');
 var models_path = __dirname + '/../models';
 console.log('connecting to db...');
 
-mongoose.connect('mongod://localhost/"TXPATS"');
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/txpats');
 
-mongoose.promise = global.promise;
 
 fs.readdirSync(models_path).forEach(function(file){
 	if(file.indexOf('js')!= -1){
