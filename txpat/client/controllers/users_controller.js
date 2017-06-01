@@ -11,8 +11,10 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 	UserFactory.session(function(res){
 		if(res){
 			self.current_user = res.data;
+			console.log(self.current_user);
 		}else {
 			self.current_user = {};
+			self.loginUser = {};
 			$location.url('/');
 		}
 	})
@@ -20,6 +22,7 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 	//logout & return to /
 	self.logout = function(){
 		self.current_user = {};
+		$location.url('/')
 	}
 
 	//create user --register and redirect to dashboard
@@ -48,6 +51,7 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 				self.loginErrors.push(res.data.errors);
 			}else{
 				self.current_user = res.data;
+				console.log(self.current_user);
 				$location.url('/dashboard')
 
 			}

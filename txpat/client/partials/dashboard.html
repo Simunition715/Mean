@@ -1,4 +1,6 @@
-<div>
-	Welcome
-	<button ng-click="UC.logout()">Logout</button>
+<div ng-controller="UsersController as UC">
+	Welcome {{UC.current_user.first_name}} {{UC.current_user.last_name}}
+	<div>
+		<button ng-click="UC.logout()">Logout</button>
+	</div>	
 </div>

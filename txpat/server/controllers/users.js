@@ -23,7 +23,7 @@ module.exports = {
 	},
 	//creates user
 	create: function(req,res){
-		if(req.body.password != req.body.passwordconfirmation){
+		if (req.body.password != req.body.passwordconfirmation){
 			return res.json({
 				"errors":{
 					"password":{
@@ -52,7 +52,8 @@ module.exports = {
 			} else {
 				if(bcrypt.compareSync(req.body.password,doc.password)){
 					var user = {
-						name:doc.name,
+						first_name:doc.fname,
+						last_name:doc.lname,
 						email:doc.email,
 						_id:doc.id
 					}

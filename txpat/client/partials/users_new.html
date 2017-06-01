@@ -19,6 +19,9 @@
 				<input type="submit" name="Login">
 			</div>
 		</form>
+		<ul>
+			<li ng-repeat="error in UC.loginErrors">{{error}}</li>
+		</ul>
 	</div>
 
 	<div id="resgister">
@@ -26,11 +29,11 @@
 		<form ng-submit="UC.create(UC.newUser)">
 			<div>
 				<label>First Name:</label>
-				<input type="text" ng-model="UC.newUser.fname">
+				<input type="text" ng-model="UC.newUser.firstname">
 			</div>
 			<div>
 				<label>Last Name:</label>
-				<input type="text" ng-model="UC.newUser.lname">
+				<input type="text" ng-model="UC.newUser.lastname">
 			</div>
 			<div>
 				<label>Email:</label>
