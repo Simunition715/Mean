@@ -38,11 +38,36 @@ module.exports = {
 				return res.json(err);
 			}
 			req.session.user = user;
-			console.log(user);
 			return res.json(user);
 		})		
-	}
-	//login user
+	},
+	login: function(req,res){
+		var isValid = true;
+		User.findOne({email:req.body.email}).exec(function(err,doc){
+			if(err){
+				return res.json(err);
+			}
+			if(!doc){
+				isValid = false;
+			} else {
+				if(bcrypt.compareSync(req.body.password,doc.password)){
+					var user = {
+						name:doc.name,
+						email:doc.email,
+						_id:doc.id
+					}
+					req.session.user = user
+					return res.json(user);
+				} else {
+					isValid = false;
+				}
+			}
+			if(!isValid){
+				return res.json({
+					"errors": "invalid credentials"
+				})
+			}
+		})
+	}	
 
-
-}
+}	

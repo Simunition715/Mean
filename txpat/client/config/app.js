@@ -6,5 +6,9 @@ app.config(function($routeProvider){
 		templateUrl: 'partials/users_new.html',
 		controller: 'UsersController as UC'
 	})
+	.when('/dashboard',{
+		templateUrl: 'partials/dashboard.html',
+		controller: 'UsersController as UC'
+	})
 	.otherwise('/')
 })

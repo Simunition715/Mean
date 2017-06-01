@@ -18,9 +18,17 @@ app.factory('UserFactory', function($http){
 			if(!res.data.errors){
 				factory.current_user = res.data;
 			}
-			console.log(res);
+			console.log("this",res);
 			callback(res);
 		})
 	}
+	factory.login = function(loginUser, callback){
+		$http.post("/session", loginUser).then(function(res){
+			if(!res.data.errors){
+				factory.current_user = res.data;
+			}
+			callback(res);
+		})
+	}	
 	return factory;
 })
