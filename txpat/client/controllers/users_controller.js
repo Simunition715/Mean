@@ -4,6 +4,7 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 	self.newUser = {};
 	self.registrationErrors = [];
 	self.loginErrors = [];
+	self.postErrors = [];
 	self.current_user = {};
 	self.loginUser = {};
 
