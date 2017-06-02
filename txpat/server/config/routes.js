@@ -10,4 +10,6 @@ module.exports = function(app){
 	app.get('/posts',Posts.index);
 	app.get('/post/:id',Posts.single);
 	app.get('/destroy/:id',Posts.destroy);
+	app.put('/like/:id',Posts.like);
+	app.post('/comment',Posts.comment);
 }

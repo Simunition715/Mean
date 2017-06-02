@@ -50,9 +50,25 @@ app.factory('UserFactory', function($http){
 			callback(res);
 		})
 	}
+	//creates comment
+	factory.createComment = function(post,callback){
+		console.log("factory",post);
+		$http.post('/comment',post).then(function(res){
+			if(!res.data.errors){
+				callback(false);
+			}
+			callback(res);			
+		})
+	}
 	//index of posts
 	factory.indexPost = function(callback){
 		$http.get('/posts').then(function(res){
+			callback(res);
+		})
+	}
+	//like incriment
+	factory.like = function(id,callback){
+		$http.put('/like/'+id).then(function(res){
 			callback(res);
 		})
 	}	

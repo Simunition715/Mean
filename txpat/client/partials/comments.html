@@ -4,10 +4,15 @@
 	<h2>{{UC.single.post}}</h2>
 </div>
 <div>
-	<form ng-submit="UC.createComment(UC.newcomment)">
-		<textarea cols="40" rows="5"></textarea>
+	<form ng-submit="UC.createComment(UC.newComment)">
+		<textarea ng-model="UC.newComment.comment" cols="40" rows="5"></textarea>
 		<div>
 			<input type="submit" value="comment">
 		</div>	
 	</form>
+	<div>
+		<ul ng-repeat="key in UC.single.comments">
+			<li>{{key.author}} said: {{key.comment}}</li>
+		</ul>
+	</div>
 </div>

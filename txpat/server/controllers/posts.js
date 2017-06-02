@@ -35,6 +35,34 @@ module.exports = {
 		})
 	},
 
+	//creates comment
+	comment: function(req, res){
+		Post.findById(req.body.post).exec(function(err,doc){
+			if(err){
+				return res.json(err);
+			}
+			comment = {
+				comment: req.body.comment.comment,
+				author: req.body.author,
+			}
+			doc.comments.push(comment)
+			doc.save()
+			return res.json(doc);
+		})
+	},
+
+	//like incrementing
+	like: function(req,res){
+		Post.findById(req.params.id).exec(function(err,doc){
+			if(err){
+				return res.json(err);
+			}
+			doc.likes++
+			doc.save();
+			return res.json(doc);
+		})
+	},
+
 	//delete single post
 	destroy: function(req,res){
 		console.log(req.params.id);
