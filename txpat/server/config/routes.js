@@ -9,4 +9,5 @@ module.exports = function(app){
 	app.post('/posts',Posts.create);
 	app.get('/posts',Posts.index);
 	app.get('/post/:id',Posts.single);
+	app.get('/destroy/:id',Posts.destroy);
 }

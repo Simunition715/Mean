@@ -3,3 +3,11 @@
 	<h2>{{UC.single.author}} posted</h2>
 	<h2>{{UC.single.post}}</h2>
 </div>
+<div>
+	<form ng-submit="UC.createComment(UC.newcomment)">
+		<textarea cols="40" rows="5"></textarea>
+		<div>
+			<input type="submit" value="comment">
+		</div>	
+	</form>
+</div>

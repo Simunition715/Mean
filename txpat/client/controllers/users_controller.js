@@ -77,9 +77,9 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 		newPost.author = UserFactory.current_user.first_name;
 		UserFactory.createPost(newPost, function(res){
 			if(res){
-				console.log(res);
+				window.location.reload();
 			}else{
-				alert('Post created succesfully');
+				console.log("failed post");
 			}
 		})
 	}
@@ -99,6 +99,13 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 	self.show = function(){
 		UserFactory.show($routeParams.id, function(res){
 			self.single = res.data;
+		})
+	}
+
+	//delete post
+	self.delete = function(id){
+		UserFactory.delete(id, function(res){
+			window.location.reload();
 		})
 	}		
 

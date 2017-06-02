@@ -35,4 +35,15 @@ module.exports = {
 		})
 	},
 
+	//delete single post
+	destroy: function(req,res){
+		console.log(req.params.id);
+		Post.findByIdAndRemove(req.params.id).exec(function(err,doc){
+			if(err){
+				return res.json(err);
+			}
+			return res.json(doc);
+		})
+	}
+
 }
