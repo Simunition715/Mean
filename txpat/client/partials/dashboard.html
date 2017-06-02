@@ -21,6 +21,8 @@
 				<li>{{post.author}} said {{post.post}}</li>
 				<li>Likes:{{post.likes}} Dislikes:{{post.dislikes}}</li>
 				<li><a href="#!/comment/{{post._id}}"> Comments</a></li>
+				<li ng-show="UC.current_user.first_name == post.author" ng-click="UC.delete(post._id)"><button>DELETE</button></li>
+
 			</ul>
 		</div>
 	</div>

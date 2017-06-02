@@ -60,5 +60,11 @@ app.factory('UserFactory', function($http){
 	factory.show = function(id, callback){
 		$http.get('/post/'+id).then(callback)
 	}
+	//delete post
+	factory.delete = function(id,callback){
+		$http.get('/destroy/'+id).then(function(res){
+			callback(res);
+		})
+	}
 	return factory;
 })
