@@ -95,6 +95,13 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 		})
 	}
 
+	//like post incrimenter
+	self.like = function(id){
+		UserFactory.like(id,function(res){
+			window.location.reload();
+		})
+	}
+
 	//single post
 	self.show = function(){
 		UserFactory.show($routeParams.id, function(res){

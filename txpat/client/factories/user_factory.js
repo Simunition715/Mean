@@ -55,6 +55,12 @@ app.factory('UserFactory', function($http){
 		$http.get('/posts').then(function(res){
 			callback(res);
 		})
+	}
+	//like incriment
+	factory.like = function(id,callback){
+		$http.put('/like/'+id).then(function(res){
+			callback(res);
+		})
 	}	
 	//single post
 	factory.show = function(id, callback){

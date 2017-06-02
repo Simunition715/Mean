@@ -21,7 +21,7 @@
 				<ul class="eachpost" ng-repeat="post in UC.posts | orderBy: '-createdAt'">
 					<li class="postings"><span class="names">{{post.author}}</span> said:</li>
 					<li class="posting">"{{post.post}}" At {{post.createdAt | date:'medium' : 'CT'}}</li>
-					<li class="postings"> <button class="like">Like</button> {{post.likes}}</li>
+					<li class="postings"> <button ng-click="UC.like(post._id)" class="like">Like</button> {{post.likes}}</li>
 					<li class="postings"><a href="#!/comment/{{post._id}}"> Comment or make offer</a></li>
 					<li ng-show="UC.current_user.first_name == post.author" ng-click="UC.delete(post._id)"><button class="delete">DELETE</button></li>
 

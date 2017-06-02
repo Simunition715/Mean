@@ -35,6 +35,18 @@ module.exports = {
 		})
 	},
 
+	//like incrementing
+	like: function(req,res){
+		Post.findById(req.params.id).exec(function(err,doc){
+			if(err){
+				return res.json(err);
+			}
+			doc.likes++
+			doc.save();
+			return res.json(doc);
+		})
+	},
+
 	//delete single post
 	destroy: function(req,res){
 		console.log(req.params.id);
