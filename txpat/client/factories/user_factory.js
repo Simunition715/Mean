@@ -1,7 +1,7 @@
 app.factory('UserFactory', function($http){
 	var factory = {};
 	factory.current_user = {};
-
+	//puts user in session
 	factory.session = function(callback){
 		$http.get('session').then(function(res){
 			if(!res.data.errors){
@@ -13,15 +13,16 @@ app.factory('UserFactory', function($http){
 			}
 		})
 	}
+	//creates new user
 	factory.create = function(newUser, callback){
 		$http.post("/users",newUser).then(function(res){
 			if(!res.data.errors){
 				factory.current_user = res.data;
 			}
-			console.log("this",res);
 			callback(res);
 		})
 	}
+	//login user
 	factory.login = function(loginUser, callback){
 		$http.post("/session", loginUser).then(function(res){
 			if(!res.data.errors){
@@ -29,6 +30,35 @@ app.factory('UserFactory', function($http){
 			}
 			callback(res);
 		})
+	}
+	//queries all users	
+	factory.index = function(callback){
+		$http.get('/users').then(function(res){
+			if(!res.data.errors){
+				callback(res);
+			}else{
+				callback(false);
+			}	
+		})
+	}
+	//creates post
+	factory.createPost = function(newPost, callback){
+		$http.post("/posts",newPost).then(function(res){
+			if(!res.data.errors){
+				callback(false);
+			}
+			callback(res);
+		})
+	}
+	//index of posts
+	factory.indexPost = function(callback){
+		$http.get('/posts').then(function(res){
+			callback(res);
+		})
 	}	
+	//single post
+	factory.show = function(id, callback){
+		$http.get('/post/'+id).then(callback)
+	}
 	return factory;
 })

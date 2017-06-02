@@ -6,18 +6,22 @@
 	<div style="display: inline-block;float: right">
 		<button ng-click="UC.logout()">Logout</button>
 	</div>	
-	<div>
-		<h3>You have {{UC.current_user.posts.length}} active posts</h3>
-	</div>
 	<hr>
 	<div>
 		<h2>Create a Posting</h2>
 		<form ng-submit="UC.createPost(UC.newPost)">
-		<textarea cols="50" rows="5" ng-model="Uc.newPost.post"></textarea>
-		<div>
-			<input type="file" name="filename" accept="image/gif, image/jpeg, image/png">
-		</div>
+		<textarea cols="50" rows="5" ng-model="UC.newPost.post"></textarea>
 		<input type="submit" value="Post">	
 		</form>
+	</div>
+	<hr>
+	<div>
+		<div ng-init="UC.indexPost()">
+			<ul ng-repeat="post in UC.posts">
+				<li>{{post.author}} said {{post.post}}</li>
+				<li>Likes:{{post.likes}} Dislikes:{{post.dislikes}}</li>
+				<li><a href="#!/comment/{{post._id}}"> Comments</a></li>
+			</ul>
+		</div>
 	</div>
 </div>
