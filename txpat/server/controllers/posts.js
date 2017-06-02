@@ -27,7 +27,7 @@ module.exports = {
 
 	//find single post
 	single: function(req, res){
-		Question.findById(req.params.id).exec(function(err, doc){
+		Post.findById(req.params.id).exec(function(err, doc){
 			if(err){
 				return res.json(err);
 			}
