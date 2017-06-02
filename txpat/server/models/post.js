@@ -15,15 +15,17 @@ var PostSchema = new mongoose.Schema({
 		},
 		author: {
 			type: String,
+		},
+		email: {
+			type: String,
 		}
 	}],
 	likes: {
 		type: Number,
 		default: 0
 	},
-	dislikes: {
-		type: Number,
-		default: 0
+	email: {
+		type: String,
 	}
 }, {timestamps: true})
 

@@ -23,7 +23,9 @@
 					<li class="posting">"{{post.post}}" At {{post.createdAt | date:'medium' : 'CT'}}</li>
 					<li class="postings"> <button ng-click="UC.like(post._id)" class="like">Like</button> {{post.likes}}</li>
 					<li class="postings"><a href="#!/comment/{{post._id}}"> Comment or make offer</a></li>
-					<li ng-show="UC.current_user.first_name == post.author" ng-click="UC.delete(post._id)"><button class="delete">DELETE</button></li>
+					<li class="postings">number of Comments {{post.comments.length}}</li>
+					<li ng-show="UC.current_user.email == post.email" ng-click="UC.delete(post._id)"><button class="delete">DELETE</button></li>
+
 
 				</ul>
 			</div>

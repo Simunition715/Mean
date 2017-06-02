@@ -10,6 +10,7 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 	self.userIndex = [];
 	self.posts = [];
 	self.single = {};
+	self.singleId = {};
 
 	//checks to see if user is in session
 	UserFactory.session(function(res){
@@ -39,8 +40,8 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 					self.registrationErrors.push(error.message);	
 				}
 			}else {
-				self.current_user = res.data;
-				$location.url('/dashboard')
+				window.location.reload();
+				alert("Please proceed to login and Welcome to TXPATS!");
 			}
 		})
 	}
@@ -54,7 +55,6 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 				self.loginErrors.push(res.data.errors);
 			}else{
 				self.current_user = res.data;
-				console.log(self.current_user);
 				$location.url('/dashboard')
 
 			}
@@ -74,7 +74,9 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 
 	//create post
 	self.createPost = function(newPost){
-		newPost.author = UserFactory.current_user.first_name;
+		console.log(newPost);
+		newPost.author =  UserFactory.current_user.first_name+" "+UserFactory.current_user.last_name,
+		newPost.email = UserFactory.current_user.email
 		UserFactory.createPost(newPost, function(res){
 			if(res){
 				window.location.reload();
@@ -90,7 +92,24 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 			if(!res.data.errors){
 				self.posts = res.data
 			}else{
-				console.log(res.data.errors);
+				$location.url('/dashboard');	
+			}
+		})
+	}
+
+	//creates comment
+	self.createComment = function(newComment){
+		post = {
+			post: self.singleId._id,
+			comment: newComment,
+			author: UserFactory.current_user.first_name+" "+UserFactory.current_user.last_name,
+			email: UserFactory.current_user.email
+		}
+		UserFactory.createComment(post,function(res){
+			if(res){
+				window.location.reload();
+			}else{
+				$location.url('/dashboard');
 			}
 		})
 	}
@@ -106,6 +125,7 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 	self.show = function(){
 		UserFactory.show($routeParams.id, function(res){
 			self.single = res.data;
+			self.singleId = res.data;
 		})
 	}
 
