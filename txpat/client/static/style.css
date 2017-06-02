@@ -1,5 +1,11 @@
 body {
-	background-color: #FFF;
+	background-image: url('./images/logo.jpg');
+	background-repeat: no-repeat;
+	background-position: 80% 20px;
+	background-size: 100px;
+
+]
+
 }
 .header {
 	font-family: 'Quicksand', sans-serif;
@@ -55,20 +61,25 @@ li {
 	background-color: #7be5ad;
 }
 #post {
+	font-size: 1.25em;	
 	border: none;
 	background-color: #5a7ddd;
 	color: #FFF;	
 }
 #logout {
+	font-size: 1em;	
 	border: none;
 	background-color: #e87171;
 	color: #FFF;
 
 }
 .delete {
+	font-size: 1em;
 	border: none;
 	background-color: #e87171;
-	color: #FFF;
-	margin-bottom: 60px;	
+	color: #FFF;	
 
+}
+.eachpost {
+	margin-bottom: 60px;
 }
