@@ -9,7 +9,7 @@
 		</div>	
 		<hr>
 		<div>
-			<h2 class="welcome">Create a Posting</h2>
+			<h2 class="welcome">Create a Post or Listing</h2>
 			<form ng-submit="UC.createPost(UC.newPost)">
 			<textarea cols="50" rows="5" ng-model="UC.newPost.post"></textarea>
 			<input id="post" type="submit" value="Post">	
@@ -18,11 +18,11 @@
 		<hr>
 		<div>
 			<div ng-init="UC.indexPost()">
-				<ul ng-repeat="post in UC.posts">
+				<ul class="eachpost" ng-repeat="post in UC.posts | orderBy: '-createdAt'">
 					<li class="postings"><span class="names">{{post.author}}</span> said:</li>
 					<li class="posting">"{{post.post}}" At {{post.createdAt | date:'medium' : 'CT'}}</li>
 					<li class="postings"> <button class="like">Like</button> {{post.likes}}</li>
-					<li class="postings"><a href="#!/comment/{{post._id}}"> Comments</a></li>
+					<li class="postings"><a href="#!/comment/{{post._id}}"> Comment or make offer</a></li>
 					<li ng-show="UC.current_user.first_name == post.author" ng-click="UC.delete(post._id)"><button class="delete">DELETE</button></li>
 
 				</ul>
