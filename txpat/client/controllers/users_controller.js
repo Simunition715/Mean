@@ -7,6 +7,8 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 	self.postErrors = [];
 	self.current_user = {};
 	self.loginUser = {};
+	self.userIndex = [];
+	self.posts = [];
 
 	//checks to see if user is in session
 	UserFactory.session(function(res){
@@ -56,7 +58,42 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 
 			}
 		})
-	}	
+	}
+
+	//shows all members
+	self.index = function(){
+		UserFactory.index(function(res){
+			if(res.data.errors){
+				console.log(errors);
+			}else{
+				self.userIndex = res.data;
+			}
+		})
+	}
+
+	//create post
+	self.createPost = function(newPost){
+		newPost.author = UserFactory.current_user.first_name;
+		UserFactory.createPost(newPost, function(res){
+			if(res){
+				console.log(res);
+			}else{
+				alert('Post created succesfully');
+			}
+		})
+	}
+
+	//index of posts
+	self.indexPost = function(){
+		UserFactory.indexPost(function(res){
+			if(!res.data.errors){
+				self.posts = res.data
+			}else{
+				console.log(res.data.errors);
+			}
+		})
+	}
+
 
 
 })
