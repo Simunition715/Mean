@@ -56,5 +56,9 @@ app.factory('UserFactory', function($http){
 			callback(res);
 		})
 	}	
+	//single post
+	factory.show = function(id, callback){
+		$http.get('/post/'+id).then(callback)
+	}
 	return factory;
 })

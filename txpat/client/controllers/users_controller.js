@@ -9,6 +9,7 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 	self.loginUser = {};
 	self.userIndex = [];
 	self.posts = [];
+	self.single = {};
 
 	//checks to see if user is in session
 	UserFactory.session(function(res){
@@ -94,6 +95,12 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 		})
 	}
 
+	//single post
+	self.show = function(){
+		UserFactory.show($routeParams.id, function(res){
+			self.single = res.data;
+		})
+	}		
 
 
 })

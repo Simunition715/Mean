@@ -8,4 +8,5 @@ module.exports = function(app){
 	app.post('/session',Users.login);
 	app.post('/posts',Posts.create);
 	app.get('/posts',Posts.index);
+	app.get('/post/:id',Posts.single);
 }
