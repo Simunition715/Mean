@@ -11,7 +11,6 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 	UserFactory.session(function(res){
 		if(res){
 			self.current_user = res.data;
-			console.log(self.current_user);
 		}else {
 			self.current_user = {};
 			self.loginUser = {};

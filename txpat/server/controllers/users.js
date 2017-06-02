@@ -52,8 +52,10 @@ module.exports = {
 			} else {
 				if(bcrypt.compareSync(req.body.password,doc.password)){
 					var user = {
-						first_name:doc.fname,
-						last_name:doc.lname,
+						first_name:doc.firstname,
+						last_name:doc.lastname,
+						posts:doc.posts,
+						comments:doc.comments,
 						email:doc.email,
 						_id:doc.id
 					}

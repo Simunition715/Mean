@@ -1,6 +1,13 @@
 <div ng-controller="UsersController as UC">
-	Welcome {{UC.current_user.first_name}} {{UC.current_user.last_name}}
 	<div>
+		<h1>Texas Patriots sale page</h1>
+	</div>
+	<h2>Welcome {{UC.current_user.first_name}} {{UC.current_user.last_name}}</h2>
+	<div style="display: inline-block;float: right">
 		<button ng-click="UC.logout()">Logout</button>
 	</div>	
+	<div>
+		<h3>You have {{UC.current_user.posts.length}} active posts</h3>
+	</div>
+	<hr>
 </div>

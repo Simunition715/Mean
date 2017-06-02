@@ -4,7 +4,7 @@ var models_path = __dirname + '/../models';
 console.log('connecting to db...');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/txpats');
+mongoose.connect('mongodb://localhost/txpats2');
 
 
 fs.readdirSync(models_path).forEach(function(file){
