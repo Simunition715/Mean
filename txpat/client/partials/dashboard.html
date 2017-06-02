@@ -10,4 +10,14 @@
 		<h3>You have {{UC.current_user.posts.length}} active posts</h3>
 	</div>
 	<hr>
+	<div>
+		<h2>Create a Posting</h2>
+		<form ng-submit="UC.createPost(UC.newPost)">
+		<textarea cols="50" rows="5" ng-model="Uc.newPost.post"></textarea>
+		<div>
+			<input type="file" name="filename" accept="image/gif, image/jpeg, image/png">
+		</div>
+		<input type="submit" value="Post">	
+		</form>
+	</div>
 </div>
