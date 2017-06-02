@@ -1,18 +1,18 @@
 <div id="container">
 
 	<div id="header">
-		<h1>Texas Patriots</h1>
+		<h1 class="header">Texas Patriots</h1>
 	</div>
 
 	<div id="login">
-		<h3>Login:</h3>
+		<h3 class="header">Login:</h3>
 		<form ng-submit="UC.login(UC.loginUser)">
 			<div>
-				<label>Email:</label>
+				<label class="header">Email:</label>
 				<input type="text" ng-model="UC.loginUser.email">
 			</div>
 			<div>
-				<label>Password:</label>
+				<label class="header">Password:</label>
 				<input type="password" ng-model="UC.loginUser.password">
 			</div>
 			<div>
@@ -25,26 +25,26 @@
 	</div>
 
 	<div id="resgister">
-		<h3>Resgister:</h3>
+		<h3 class="header">Resgister:</h3>
 		<form ng-submit="UC.create(UC.newUser)">
 			<div>
-				<label>First Name:</label>
+				<label class="header">First Name:</label>
 				<input type="text" ng-model="UC.newUser.firstname">
 			</div>
 			<div>
-				<label>Last Name:</label>
+				<label class="header">Last Name:</label>
 				<input type="text" ng-model="UC.newUser.lastname">
 			</div>
 			<div>
-				<label>Email:</label>
+				<label class="header">Email:</label>
 				<input type="text" ng-model="UC.newUser.email">
 			</div>
 			<div>
-				<label>Password:</label>
+				<label class="header">Password:</label>
 				<input type="password" ng-model="UC.newUser.password">
 			</div>
 			<div>
-				<label>Password Confirmation</label>
+				<label class="header">Password Confirmation</label>
 				<input type="password" ng-model="UC.newUser.passwordconfirmation">
 			</div>
 			<div>
