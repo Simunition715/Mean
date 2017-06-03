@@ -50,6 +50,15 @@ app.factory('UserFactory', function($http){
 			callback(res);
 		})
 	}
+	//individual posts index
+	// factory.myIndex = function(id,callback){
+	// 	$http.get('/myPosts/'+id).then(function(res){
+	// 		if(!res.data.errors){
+	// 			callback(false);
+	// 		}
+	// 		callback(res);
+	// 	})
+	// }
 	//creates comment
 	factory.createComment = function(post,callback){
 		console.log("factory",post);

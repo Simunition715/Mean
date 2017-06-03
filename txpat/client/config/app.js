@@ -14,5 +14,9 @@ app.config(function($routeProvider){
 		templateUrl: 'partials/comments.html',
 		controller: 'UsersController as UC'
 	})
+	.when('/myposts/:id',{
+		templateUrl: 'partials/myposts.html',
+		controller: 'UsersController as UC'
+	})
 	.otherwise('/')
 })

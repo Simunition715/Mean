@@ -13,6 +13,8 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 	self.singleId = {};
 	self.admin1 = 'wbprogramming@icloud.com';
 	self.commentErrors = "";
+	self.myPosts = [];
+	self.email = UserFactory.current_user.email
 
 	//checks to see if user is in session
 	UserFactory.session(function(res){
@@ -136,6 +138,22 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 		})
 	}
 
+	//individual index of posts
+	// self.myIndex = function(){
+	// 	id = UserFactory.current_user._id;
+	// 	console.log(id);
+	// 	UserFactory.myIndex(id,function(res){
+	// 		self.myPosts = res.data;
+	// 	})
+	// }
+
+
+	//delete post
+	self.delete2 = function(id){
+		UserFactory.delete(id, function(res){
+			$location.url('/dashboard');
+		})
+	}	
 	//delete post
 	self.delete = function(id){
 		UserFactory.delete(id, function(res){

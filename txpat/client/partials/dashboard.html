@@ -21,8 +21,8 @@
 			</div>
 			<div>
 				<ul id="navbar">
-					<li class="links"><a href="#">My Posts</a></li>
-					<li class="links"><a href="#">Commented</a></li>
+					<li class="links"><a href="#!/myposts/{{UC.current_user._id}}">My Posts</a></li>
+				<!-- 	<li class="links"><a href="#">Commented</a></li> -->
 				</ul>
 			</div>
 		<hr>
@@ -35,8 +35,6 @@
 					<li class="postings"><a href="#!/comment/{{post._id}}"> Comment or make offer</a></li>
 					<li class="postings">number of Comments {{post.comments.length}}</li>
 					<li ng-show="UC.current_user.email == post.email || UC.current_user.email == UC.admin1" ng-click="UC.delete(post._id)"><button class="delete">DELETE</button></li>
-
-
 				</ul>
 			</div>
 		</div>

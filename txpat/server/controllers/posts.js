@@ -51,6 +51,16 @@ module.exports = {
 		})
 	},
 
+	//individual indexed posts
+	// myindex: function(req,res){
+	// 	User.findById(req.session.user._id).exec(function(err,doc){
+	// 		if(err){
+	// 			return res.json(err);
+	// 		}
+	// 		console.log(doc);
+	// 	})
+	// },
+
 	//like incrementing
 	like: function(req,res){
 		Post.findById(req.params.id).exec(function(err,doc){
