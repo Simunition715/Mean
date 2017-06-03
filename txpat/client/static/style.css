@@ -32,6 +32,11 @@ body {
 #dcontainer .header {
 	font-size: 4em;
 }
+#navbar .links {
+	display: inline-block;
+	font-size: 1.25em;
+	font-family: 'Quicksand', sans-serif;
+}
 .welcome {
 	font-family: 'Quicksand', sans-serif;
 	font-size: 2em;	
@@ -44,7 +49,6 @@ a {
 }
 a:hover {
 	color: #000;
-	padding: 5px;
 }
 .posting {
 	font-family: 'Quicksand', sans-serif;
@@ -62,6 +66,10 @@ li {
 	color: #545252;
 	font-size: 1.5em;
 }
+#back {
+	font-size: 1.5em;
+	font-family: 'Quicksand', sans-serif;
+}
 .like {
 	width:3em;
 	height: 3em;
@@ -70,7 +78,7 @@ li {
 	color: #545252;
 	background-color: #7be5ad;
 }
-#post {
+.post {
 	font-size: 1.25em;	
 	border: none;
 	background-color: #5a7ddd;

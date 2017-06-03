@@ -12,12 +12,18 @@
 			<h2 class="welcome">Create a Post or Listing</h2>
 			<form ng-submit="UC.createPost(UC.newPost)">
 			<textarea cols="50" rows="5" ng-model="UC.newPost.post"></textarea>
-			<input id="post" type="submit" value="Post">	
+			<input class="post" type="submit" value="Post">	
 			</form>
 		</div>
 		<hr>
 			<div>
 				<input type="text" ng-model="searchText"> <h3 id="search">Search for listings here</h3>
+			</div>
+			<div>
+				<ul id="navbar">
+					<li class="links"><a href="#">My Posts</a></li>
+					<li class="links"><a href="#">Commented</a></li>
+				</ul>
 			</div>
 		<hr>
 		<div>

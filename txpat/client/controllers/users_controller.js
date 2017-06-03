@@ -12,6 +12,7 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 	self.single = {};
 	self.singleId = {};
 	self.admin1 = 'wbprogramming@icloud.com';
+	self.commentErrors = "";
 
 	//checks to see if user is in session
 	UserFactory.session(function(res){
@@ -106,13 +107,18 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 			author: UserFactory.current_user.first_name+" "+UserFactory.current_user.last_name,
 			email: UserFactory.current_user.email
 		}
-		UserFactory.createComment(post,function(res){
-			if(res){
-				window.location.reload();
-			}else{
-				$location.url('/dashboard');
-			}
-		})
+		if(post.comment == undefined){
+			self.commentErrors = "Comment cannot be left blank!";
+		}
+		else{
+			UserFactory.createComment(post,function(res){
+				if(res){
+					self.commentErrors = res.data.errors;
+				}else{
+					window.location.reload();
+				}
+			})
+		}
 	}
 
 	//like post incrimenter
