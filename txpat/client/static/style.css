@@ -10,7 +10,16 @@ body {
 .header {
 	font-family: 'Quicksand', sans-serif;
 }
-#container {
+.headerc {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 1.5em;	
+}
+#search {
+	display: inline-block;
+	font-family: 'Quicksand', sans-serif;
+
+}
+.container {
 	width: 70%;
 	height: auto;
 	margin: 0 auto;

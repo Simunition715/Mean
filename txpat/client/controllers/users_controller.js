@@ -11,6 +11,7 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 	self.posts = [];
 	self.single = {};
 	self.singleId = {};
+	self.admin1 = 'wbprogramming@icloud.com';
 
 	//checks to see if user is in session
 	UserFactory.session(function(res){

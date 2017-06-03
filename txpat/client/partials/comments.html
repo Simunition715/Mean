@@ -1,18 +1,20 @@
-<div ng-init="UC.show()">
-	<h1>Post #{{UC.single._id}}</h1>
-	<h2>{{UC.single.author}} posted</h2>
-	<h2>{{UC.single.post}}</h2>
-</div>
-<div>
-	<form ng-submit="UC.createComment(UC.newComment)">
-		<textarea ng-model="UC.newComment.comment" cols="40" rows="5"></textarea>
-		<div>
-			<input type="submit" value="comment">
-		</div>	
-	</form>
-	<div>
-		<ul ng-repeat="key in UC.single.comments">
-			<li>{{key.author}} said: {{key.comment}}</li>
-		</ul>
+<div class="container">	
+	<div ng-init="UC.show()">
+		<h1 class="header">Post #{{UC.single._id}}</h1>
+		<h2 class="header">{{UC.single.author}} posted</h2>
+		<h2 class="header">{{UC.single.post}}</h2>
 	</div>
-</div>
+	<div>
+		<form ng-submit="UC.createComment(UC.newComment)">
+			<textarea ng-model="UC.newComment.comment" cols="40" rows="5"></textarea>
+			<div>
+				<input type="submit" value="comment">
+			</div>	
+		</form>
+		<div>
+			<ul ng-repeat="key in UC.single.comments">
+				<li class="headerc">{{key.author}} said: {{key.comment}}</li>
+			</ul>
+		</div>
+	</div>
+</div>	
