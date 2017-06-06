@@ -12,11 +12,10 @@
 			<button class="waves-effect waves-light btn red accent-4"  ng-click="UC.logout()">Logout</button>
 		</div>	
 		<hr>
-		<div>
+		<div id="posting">
 			<h2 class="welcome">Create a Post or Listing</h2>
 			<form ng-submit="UC.createPost(UC.newPost)">
 			<textarea .form-control placeholder="Description or Content of Post" cols="50" rows="5" ng-model="UC.newPost.post"></textarea>
-			<hr>
 			<h5>Upload image(optional)</h5>
 			Please upload your image here <a href="https://imgbb.com/" target="_blank">Upload image</a> and copy and paste the link below <input .form-control type="text" placeholder="Insert image URL here" ng-model="UC.newPost.img"> 	
 			<div>
@@ -26,7 +25,7 @@
 		</div>
 		<hr>
 			<div>
-				<input .form-control placeholder="Search" type="text" ng-model="searchText"> <h3 id="search">Search for listings here</h3>
+				 <i class="medium material-icons">search</i><h3 id="search">Search for listings here</h3><input .form-control placeholder="Search" type="text" ng-model="searchText">
 			</div>
 			<div>
 				<ul id="navbar">
