@@ -2,21 +2,22 @@
 
 	<div id="header">
 		<h1 class="header">Texas Patriots</h1>
+		<h4 class="motto">Honor | Courage | Commitment</h4>
 	</div>
 
 	<div id="login">
 		<h3 class="header">Login:</h3>
-		<form ng-submit="UC.login(UC.loginUser)">
+		<form .form-group ng-submit="UC.login(UC.loginUser)">
 			<div>
 				<label class="header">Email:</label>
-				<input type="text" ng-model="UC.loginUser.email">
+				<input .form-control type="text" ng-model="UC.loginUser.email">
 			</div>
 			<div>
 				<label class="header">Password:</label>
-				<input type="password" ng-model="UC.loginUser.password">
+				<input .form-control type="password" ng-model="UC.loginUser.password">
 			</div>
 			<div>
-				<input type="submit" name="Login">
+				<input class="waves-effect waves-light btn light-blue darken-4" type="submit" value="Login">
 			</div>
 		</form>
 		<ul>
@@ -25,30 +26,30 @@
 	</div>
 
 	<div id="resgister">
-		<h3 class="header">Resgister:</h3>
-		<form ng-submit="UC.create(UC.newUser)">
+		<h3 class="header">Register:</h3>
+		<form .form-group ng-submit="UC.create(UC.newUser)">
 			<div>
 				<label class="header">First Name:</label>
-				<input type="text" ng-model="UC.newUser.firstname">
+				<input .form-control type="text" ng-model="UC.newUser.firstname">
 			</div>
 			<div>
 				<label class="header">Last Name:</label>
-				<input type="text" ng-model="UC.newUser.lastname">
+				<input .form-control type="text" ng-model="UC.newUser.lastname">
 			</div>
 			<div>
 				<label class="header">Email:</label>
-				<input type="text" ng-model="UC.newUser.email">
+				<input .form-control type="text" ng-model="UC.newUser.email">
 			</div>
 			<div>
 				<label class="header">Password:</label>
-				<input type="password" ng-model="UC.newUser.password">
+				<input .form-control type="password" ng-model="UC.newUser.password">
 			</div>
 			<div>
 				<label class="header">Password Confirmation</label>
-				<input type="password" ng-model="UC.newUser.passwordconfirmation">
+				<input .form-control type="password" ng-model="UC.newUser.passwordconfirmation">
 			</div>
 			<div>
-				<input type="submit" value="Register">
+				<input class="waves-effect waves-light btn light-blue darken-4" type="submit" value="Register">
 			</div>
 			<ul>
 				<li ng-repeat="error in UC.registrationErrors">{{error}}</li>

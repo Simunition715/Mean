@@ -3,12 +3,13 @@ body {
 	background-repeat: no-repeat;
 	background-position: 80% 20px;
 	background-size: 100px;
-
-]
-
 }
+
 .header {
 	font-family: 'Quicksand', sans-serif;
+}
+.motto {
+	font-family: 'Seaweed Script', cursive;
 }
 .headerc {
 	font-family: 'Quicksand', sans-serif;
@@ -44,6 +45,11 @@ body {
 .total {
 	font-family: 'Quicksand', sans-serif;
 	font-size: 1.5em;	
+}
+.boxes {
+	background-color: #dbdbdb;
+	padding: 15px;
+	border: 1px solid black;
 }
 a {
 	color: #5a7ddd;

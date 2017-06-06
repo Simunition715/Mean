@@ -4,7 +4,7 @@
 		<h1 class="header">Post #{{UC.single._id}}</h1>
 		<h2 class="header">{{UC.single.author}} posted</h2>
 		<h2 class="header">{{UC.single.post}}</h2>
-		<a ng-href="{{UC.single.img}}" target="_blank">Click here for image</a>
+		<a ng-hide="UC.single.img == null" ng-href="{{UC.single.img}}" target="_blank">Click here for image</a>
 	</div>
 
 	<div>
