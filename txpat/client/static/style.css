@@ -41,6 +41,10 @@ body {
 	font-family: 'Quicksand', sans-serif;
 	font-size: 2em;	
 }
+.total {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 1.5em;	
+}
 a {
 	color: #5a7ddd;
 	text-decoration: none;

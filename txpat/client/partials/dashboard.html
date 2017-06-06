@@ -4,6 +4,9 @@
 			<h1 class="header">Texas Patriots sale page</h1>
 		</div>
 		<h2 class="welcome">Welcome {{UC.current_user.first_name}} {{UC.current_user.last_name}}</h2>
+		<div ng-init="UC.indexPost()">
+			<h4 class="total">Current total active posts {{UC.posts.length}}</h4>
+		</div>
 		<div style="display: inline-block;float: right">
 			<button id="logout" ng-click="UC.logout()">Logout</button>
 		</div>	
@@ -12,6 +15,10 @@
 			<h2 class="welcome">Create a Post or Listing</h2>
 			<form ng-submit="UC.createPost(UC.newPost)">
 			<textarea cols="50" rows="5" ng-model="UC.newPost.post"></textarea>
+			<hr>
+			<h5>Upload image(optional)</h5>
+			Please upload your image here <a href="https://imgbb.com/" target="_blank">Upload image</a> and copy and paste the link here --> <input type="text" placeholder="Insert image URL here" ng-model="UC.newPost.img"> 	
+			<hr>
 			<input class="post" type="submit" value="Post">	
 			</form>
 		</div>

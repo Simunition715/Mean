@@ -2,6 +2,8 @@ var express = require('express');
 var bp = require('body-parser');
 var session = require('express-session');
 
+
+
 var app = express();
 
 app.use(express.static(__dirname + '/bower_components'));
@@ -14,6 +16,7 @@ app.use(session({
 }))
 
 app.use(bp.json());
+
 
 require('./server/config/mongoose.js');
 require('./server/config/routes.js')(app);

@@ -1,5 +1,8 @@
 var mongoose = require('mongoose');
 var Post = mongoose.model('Post');
+var User = mongoose.model('User');
+
+
 
 module.exports = {
 	//query to find all posts
@@ -14,12 +17,14 @@ module.exports = {
 
 	//creates post
 	create: function(req,res){
+		console.log("has id?",req.body);
 		var post = new Post(req.body);
 		post.save(function(err, post){
 			if(err){
 				console.log(err);
 				return res.json(err);
 			}else{
+				console.log(post);
 				return res.json(post);
 			}
 		})		
@@ -52,14 +57,15 @@ module.exports = {
 	},
 
 	//individual indexed posts
-	// myindex: function(req,res){
-	// 	User.findById(req.session.user._id).exec(function(err,doc){
-	// 		if(err){
-	// 			return res.json(err);
-	// 		}
-	// 		console.log(doc);
-	// 	})
-	// },
+	myindex: function(req,res){
+		console.log("this",req.params.id);
+		Post.find({authorId:req.params.id}).exec(function(err,doc){
+			if(err){
+				return res.json(err);
+			}
+			return res.json(doc);
+		})
+	},
 
 	//like incrementing
 	like: function(req,res){

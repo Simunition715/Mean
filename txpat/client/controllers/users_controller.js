@@ -79,6 +79,7 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 	//create post
 	self.createPost = function(newPost){
 		console.log(newPost);
+		newPost.authorId = UserFactory.current_user._id,
 		newPost.author =  UserFactory.current_user.first_name+" "+UserFactory.current_user.last_name,
 		newPost.email = UserFactory.current_user.email
 		UserFactory.createPost(newPost, function(res){
@@ -100,6 +101,7 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 			}
 		})
 	}
+
 
 	//creates comment
 	self.createComment = function(newComment){
@@ -138,14 +140,13 @@ app.controller('UsersController', function(UserFactory, $location, $routeParams)
 		})
 	}
 
-	//individual index of posts
-	// self.myIndex = function(){
-	// 	id = UserFactory.current_user._id;
-	// 	console.log(id);
-	// 	UserFactory.myIndex(id,function(res){
-	// 		self.myPosts = res.data;
-	// 	})
-	// }
+	// individual index of posts
+	self.myIndex = function(){
+		console.log($routeParams.id);
+		UserFactory.myIndex($routeParams.id,function(res){
+			self.myPosts = res.data;
+		})
+	}
 
 
 	//delete post

@@ -51,17 +51,16 @@ app.factory('UserFactory', function($http){
 		})
 	}
 	//individual posts index
-	// factory.myIndex = function(id,callback){
-	// 	$http.get('/myPosts/'+id).then(function(res){
-	// 		if(!res.data.errors){
-	// 			callback(false);
-	// 		}
-	// 		callback(res);
-	// 	})
-	// }
-	//creates comment
+	factory.myIndex = function(id,callback){
+		$http.get('/myPosts/'+id).then(function(res){
+			if(!res.data.errors){
+				callback(false);
+			}
+			callback(res);
+		})
+	}
+	// creates comment
 	factory.createComment = function(post,callback){
-		console.log("factory",post);
 		$http.post('/comment',post).then(function(res){
 			if(!res.data.errors){
 				callback(false);
