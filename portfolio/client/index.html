@@ -4,8 +4,12 @@
 	<title>WB Programming</title>
 	<meta charset="utf-8">
 	<script src="angular/angular.min.js"></script>
-	<script src="angular-rroute/angular-route.min.js"></script>
+	<script src="angular-route/angular-route.min.js"></script>
 	<script src="config/app.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="./static/js/functions.js"></script>
+	<script src="./static/js/typeit.js"></script>
+
 	<!-- controllers go here -->
 	<!-- <script src="controllers/users_controller.js"></script> -->
 
@@ -13,11 +17,13 @@
 	<!-- <script src="factories/user_factory.js"></script> -->
 
 	<!-- stylesheets/bootstrap/etc.. goes here -->
-	<!-- <link rel="stylesheet" type="text/css" href=""> -->
+	<link rel="stylesheet" type="text/css" href="./static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./static/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 </head>
 <body>
 	<div class="container" ng-view>
-		
+		<h1 id="contentDiv"></h1>
 	</div>
 </body>
 </html>
