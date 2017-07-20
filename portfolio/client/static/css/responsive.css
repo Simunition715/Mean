@@ -6,4 +6,7 @@
     position: relative;
     top: -2%;
   }
+  #scroll {
+  	top: 300px;
+  }
 }
