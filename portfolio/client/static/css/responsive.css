@@ -2,11 +2,11 @@
 }
 
 @media screen and (max-width: 600px) {
-  .body h1 {
+  .body-one h1 {
     position: relative;
-    top: -2%;
+    top: 10%;
   }
   #scroll {
-  	top: 300px;
+  	top: 200px;
   }
 }

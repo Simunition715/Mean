@@ -110,10 +110,30 @@ table {
 	top: 500px;
 	font-family: 'Inconsolata', monospace;
 	color: #fff;
+	text-decoration: none;
+}
+.body-one a:hover {
+	color: #c7c7c7;
+}
+.body-one i {
+	display: block;
+	padding-top: 15px;
 }
 #body-two {
 	height: 100vh;
+	padding: 30px;
 }
+#body-two h1 {
+	text-align: center;
+	font-family: 'Inconsolata', monospace;
+	font-size: 50px;
+
+}
+#body-three {
+	height: 100vh;
+	padding: 30px;
+}
+
 
 
 
